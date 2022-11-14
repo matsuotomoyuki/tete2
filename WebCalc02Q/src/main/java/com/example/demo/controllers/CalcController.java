@@ -48,6 +48,17 @@ public class CalcController {
 
 		return "res";
 	}
+	
+	@PostMapping("resDIV")
+	public String resDIV(
+			Model model,
+			@RequestParam("numA") String NumA,
+			@RequestParam("numB") String NumB) {
+
+		model.addAttribute("kotae", service.calculateDIV(NumA, NumB));
+
+		return "res";
+	}
 
 	//	引き算、掛け算、割り算を記載していきましょう。
 	//	ですが、割り算はちょっと特殊なので注意しましょう！
